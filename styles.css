@@ -89,13 +89,12 @@ footer { color: var(--muted); font-size: .8rem; text-align: center; padding-top:
 @media (prefers-reduced-motion: reduce) { a.card { transition: none; } }
 
 a.card {
-    background:
+    background-image:
         linear-gradient(
-            rgba(23, 20, 43, 0.72),
-            rgba(23, 20, 43, 0.72)
+            rgba(13, 11, 26, 0.60),
+            rgba(13, 11, 26, 0.60)
         ),
-        var(--card-image, none),
-        var(--panel);
+        var(--card-image, none);
 
     background-size: cover;
     background-position: center;
