@@ -100,3 +100,9 @@ a.card {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+a.card,
+a.card .name,
+a.card .desc {
+    color: #ffffff;
+}
