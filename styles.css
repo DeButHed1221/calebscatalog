@@ -87,3 +87,16 @@ nav a[aria-current="page"] { color: var(--bg); background: var(--c2); border-col
 .name.internal::after { content: "→"; }
 footer { color: var(--muted); font-size: .8rem; text-align: center; padding-top: 1rem; }
 @media (prefers-reduced-motion: reduce) { a.card { transition: none; } }
+
+.card {
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.78),
+            rgba(255, 255, 255, 0.78)
+        ),
+        var(--card-image, url("./images/fun.jpg"));
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
