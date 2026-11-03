@@ -27,6 +27,13 @@
       <p>Some great sites!</p>
     </header>
 
+    <div class="random-picker">
+  <button id="random-site-button" type="button">
+    🎲 Take Me Somewhere Random
+  </button>
+  <p id="random-site-status" aria-live="polite"></p>
+</div>
+
     <!-- To edit: add, remove, or change any <li> below. -->
 
     <section class="play">
@@ -41,5 +48,70 @@
 
     <footer>Game on. 🎮</footer>
   </main>
+  
+  <script>
+const randomButton = document.getElementById("random-site-button");
+const randomStatus = document.getElementById("random-site-status");
+
+const pages = [
+    "./web-games.html",
+    "./arcades.html",
+    "./fun-sites.html"
+];
+
+randomButton.addEventListener("click", async () => {
+    const newTab = window.open("about:blank", "_blank");
+
+    randomButton.disabled = true;
+    randomStatus.textContent = "Finding a random website...";
+
+    try {
+        const pageTexts = await Promise.all(
+            pages.map(async page => {
+                const response = await fetch(page);
+                if (!response.ok) throw new Error("Page not found");
+                return response.text();
+            })
+        );
+
+        const parser = new DOMParser();
+
+        const sites = pageTexts.flatMap(html => {
+            const doc = parser.parseFromString(html, "text/html");
+
+            return Array.from(
+                doc.querySelectorAll('a.card[href^="http"]')
+            ).map(link => ({
+                url: link.href,
+                name: link.querySelector(".name")?.textContent.trim()
+            }));
+        });
+
+        if (sites.length === 0) {
+            throw new Error("No websites found");
+        }
+
+        const pick = sites[Math.floor(Math.random() * sites.length)];
+
+        randomStatus.textContent = "Random pick: " + pick.name;
+
+        if (newTab) {
+            newTab.location.href = pick.url;
+        } else {
+            window.location.href = pick.url;
+        }
+
+    } catch (error) {
+        if (newTab) newTab.close();
+
+        randomStatus.textContent = "Couldn't find a website. Try again!";
+        console.error(error);
+
+    } finally {
+        randomButton.disabled = false;
+    }
+});
+</script>
+  
 </body>
 </html>
