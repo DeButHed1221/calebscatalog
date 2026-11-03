@@ -106,3 +106,30 @@ a.card .name,
 a.card .desc {
     color: #ffffff;
 }
+.random-picker {
+    margin: 2rem 0 3rem;
+}
+
+#random-site-button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .9rem 1.3rem;
+    color: var(--bg);
+    background: var(--c2);
+    border: 2px solid var(--c2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#random-site-button:hover {
+    background: var(--panel);
+    color: white;
+    transform: translateY(-2px);
+}
+
+#random-site-status {
+    color: var(--muted);
+    font-size: .85rem;
+}
