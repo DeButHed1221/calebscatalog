@@ -133,3 +133,6 @@ a.card .desc {
     color: var(--muted);
     font-size: .85rem;
 }
+.creative-corner {
+    --accent: var(--c4);
+}
