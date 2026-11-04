@@ -133,28 +133,6 @@ a.card .desc {
     color: var(--muted);
     font-size: .85rem;
 }
-.quote-feature {
-    position: fixed;
-    right: 40px;
-    left: 40px;
-  
-    top: 50%;
-    transform: translateY(-50%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.4rem;
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-
-    width: 150px;
-    z-index: 10;
-}
 .creative-corner {
     --accent: var(--c4);
 }
