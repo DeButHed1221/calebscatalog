@@ -135,7 +135,9 @@ a.card .desc {
 }
 .quote-feature {
     position: fixed;
-    left: 20px;
+    right: 30px;
+    left: 30px;
+  
     top: 50%;
     transform: translateY(-50%);
 
