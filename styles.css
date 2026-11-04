@@ -134,6 +134,11 @@ a.card .desc {
     font-size: .85rem;
 }
 .quote-feature {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,23 +150,8 @@ a.card .desc {
     box-shadow: none;
     padding: 0;
 
-    width: fit-content;
-    max-width: 200px;
-    margin: 1.5rem 0;
-}
-
-.quote-heart {
-    width: 125px;
-    display: block;
-    filter: drop-shadow(0 0 7px rgba(181, 138, 255, 0.3));
-}
-
-.quote-text {
-    color: white;
-    font-size: 0.95rem;
-    font-weight: bold;
-    line-height: 1.4;
-    margin: 0;
+    width: 150px;
+    z-index: 10;
 }
 .creative-corner {
     --accent: var(--c4);
